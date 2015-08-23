@@ -102,6 +102,13 @@ write.table(mean_std, file="x_data.txt", sep=" ", row.names=FALSE)
 write.table(y2, file="y_data.txt", sep=" ", row.names=FALSE)
 
 
+# the average of each variable for each activity.
+cnt <- ncol(mean_std)
+for( i in 1:cnt)
+{
+	print(mean(mean_std[[i]]))
+}
+
 
 
 
