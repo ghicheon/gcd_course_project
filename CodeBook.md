@@ -1,3 +1,31 @@
+
+-----------------------------------
+procedure to produce tidy data set
+-----------------------------------
+
+Merges the training and the test sets to create one data set.
+Extracts only the measurements on the mean and standard deviation for each measurement. 
+Uses descriptive activity names to name the activities in the data set
+Appropriately labels the data set with descriptive variable names. 
+From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+1. read files from train/test  of current directory using read.csv() .
+2. merged  the traing/test sets into one using rbind()
+3. extracted the mean and standard deviation from columns. get the data.frame mean_std  
+   FYI, I used the traditional tool "grep" in order to extract correct column numbers.
+4. I made new list of activity name  from the file that is made from y_test.txt & y_train.txt
+5. I named all column of previous result. 
+   actually, I'm not satisfied with the names.
+   Unfortunetly, I didn't have time to come up with nice many names... 
+
+6. wrote to files using write.table()
+7. result file names are  x_data.txt and y_data.txt
+   as a result, x_data.txt was made from X_text.txt and X_train.txt and 
+   y_data.txt was made from y_text.txt and y_train.txt
+
+----------------------
+variables of x_data.txt
+----------------------
 1  tBodyAcc-mean()-X
 2  tBodyAcc-mean()-Y
 3  tBodyAcc-mean()-Z
@@ -78,3 +106,8 @@
 78 fBodyBodyGyroJerkMag-std()
 79 fBodyBodyGyroJerkMag-meanFreq()
 
+----------------------
+variables of y_data.txt
+----------------------
+it has one column.
+it means activity name.
